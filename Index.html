@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Analisis Real-Time XAU/USD - Ditingkatkan</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header>
+    <h1>Analisis Real-Time XAU/USD - Ditingkatkan</h1>
+</header>
+<main>
+    <section class="chart-container" aria-label="Area grafik dan indikator XAU/USD">
+        <div class="controls">
+            <label for="timeframe">Time Frame:</label>
+            <select id="timeframe" aria-label="Pilih time frame untuk chart">
+                <option value="5min">5 Menit</option>
+                <option value="15min">15 Menit</option>
+                <option value="30min">30 Menit</option>
+                <option value="1h" selected>1 Jam</option>
+                <option value="4h">4 Jam</option>
+                <option value="1day">1 Hari</option>
+            </select>
+            <div id="price" aria-live="polite" aria-atomic="true" tabindex="0">Loading...</div>
+            <div id="signal" aria-live="polite" aria-atomic="true" tabindex="0">Sinyal: ...</div>
+        </div>
+        <canvas id="priceChart" aria-label="Chart harga XAU/USD" role="img"></canvas>
+        <canvas id="macdChart" aria-label="Chart MACD XAU/USD" role="img" style="margin-top:1rem;"></canvas>
+        <div class="indicators" aria-label="Indikator teknis" style="margin-top:1rem;">
+            <div class="indicator-box" title="Simple Moving Average periode 5">SMA 5: <span id="sma5">-</span></div>
+            <div class="indicator-box" title="Simple Moving Average periode 20">SMA 20: <span id="sma20">-</span></div>
+            <div class="indicator-box" title="Relative Strength Index periode 14">RSI 14: <span id="rsi">-</span></div>
+            <div class="indicator-box" title="Moving Average Convergence Divergence">MACD: <span id="macd">-</span></div>
+            <div class="indicator-box" title="Average Directional Index periode 14">ADX: <span id="adx">-</span></div>
+            <div class="indicator-box" title="Trend Analisis">Trend: <span id="trend">-</span></div>
+        </div>
+    </section>
+
+    <aside class="news-container" aria-label="Berita yang mempengaruhi pasar XAU/USD">
+        <h2>Berita yang Mempengaruhi Pasar</h2>
+        <div class="news-list" id="newsList" tabindex="0">Loading news...</div>
+    </aside>
+</main>
+<footer>
+    Powered by NewsAPI, Twelve Data, Finnhub APIs | Update Terakhir: <span id="lastUpdate">-</span>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200&display=swap');
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #1f2937, #111827);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 1vh;
+}
+header {
+    background-color: #111827;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    text-align: center;
+}
+header h1 {
+    font-weight: 600;
+    color: #fbbf24;
+    margin: 0;
+    font-size: 1.8rem;
+}
+main {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem;
+    gap: 2rem;
+    justify-content: center;
+    background: #111827;
+}
+.chart-container {
+    background: #1e293b;
+    border-radius: 12px;
+    padding: 1.5rem;
+    flex: 1 1 600px;
+    max-width: 900px;
+    box-shadow: 0 4px 14px rgba(251, 191, 36, 0.25);
+    display: flex;
+    flex-direction: column;
+    min-height: 560px;
+    position: relative;
+}
+.controls {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+label {
+    font-weight: 600;
+    color: #fbbf24;
+    user-select: none;
+}
+select {
+    background: #374151;
+    border: none;
+    color: white;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+select:hover,
+select:focus {
+    background: #4b5563;
+    outline: none;
+}
+#price,
+#signal {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-left: auto;
+    min-width: 220px;
+    padding: 0.3rem 0.6rem;
+    border-radius: 6px;
+    text-align: center;
+}
+#price {
+    color: #fbbf24;
+    user-select: text;
+}
+#signal {
+    user-select: none;
+}
+.buy-signal {
+    background-color: rgba(74, 222, 128, 0.25);
+    color: #22c55e;
+    animation: pulseBuy 1.8s infinite ease-in-out;
+    box-shadow: 0 0 12px #22c55e;
+}
+.sell-signal {
+    background-color: rgba(248, 113, 113, 0.25);
+    color: #ef4444;
+    animation: pulseSell 1.8s infinite ease-in-out;
+    box-shadow: 0 0 12px #ef4444;
+}
+.neutral-signal {
+    background-color: rgba(156, 163, 175, 0.2);
+    color: #9ca3af;
+}
+.trend-up {
+    background-color: rgba(74, 222, 128, 0.15);
+    color: #22c55e;
+}
+.trend-down {
+    background-color: rgba(248, 113, 113, 0.15);
+    color: #ef4444;
+}
+@keyframes pulseBuy {
+    0%,
+    100% {
+        box-shadow: 0 0 8px 3px rgba(74, 222, 128, 0.6);
+    }
+    50% {
+        box-shadow: 0 0 20px 8px rgba(74, 222, 128, 0.2);
+    }
+}
+@keyframes pulseSell {
+    0%,
+    100% {
+        box-shadow: 0 0 8px 3px rgba(248, 113, 113, 0.6);
+    }
+    50% {
+        box-shadow: 0 0 20px 8px rgba(248, 113, 113, 0.2);
+    }
+}
+.news-container {
+    background: #1e293b;
+    border-radius: 12px;
+    padding: 1.5rem;
+    flex: 1 1 350px;
+    max-width: 400px;
+    box-shadow: 0 4px 14px rgba(251, 191, 36, 0.15);
+    overflow-y: auto;
+    max-height: 600px;
+    display: flex;
+    flex-direction: column;
+}
+.news-container h2 {
+    margin-top: 0;
+    color: #fbbf24;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #fbbf24;
+    padding-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+.news-list {
+    flex: 1;
+    overflow-y: auto;
+}
+.news-item {
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #374151;
+    padding-bottom: 0.75rem;
+}
+.news-item:last-child {
+    border-bottom: none;
+}
+.news-item a {
+    color: #fbbf24;
+    font-weight: 600;
+    text-decoration: none;
+}
+.news-item a:hover,
+.news-item a:focus {
+    text-decoration: underline;
+}
+.news-item p {
+    font-size: 0.9rem;
+    color: #d1d5db;
+    margin: 0.25rem 0 0 0;
+}
+.news-item .impact {
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    user-select: none;
+}
+.high-impact {
+    background-color: rgba(220, 38, 38, 0.25);
+    color: #dc2626;
+}
+.medium-impact {
+    background-color: rgba(234, 179, 8, 0.25);
+    color: #ca8a04;
+}
+.low-impact {
+    background-color: rgba(16, 185, 129, 0.25);
+    color: #059669;
+}
+.indicators {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+.indicator-box {
+    background: rgba(55, 65, 81, 0.5);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    flex: 1 1 120px;
+    user-select: text;
+}
+.indicator-box span {
+    font-weight: 600;
+    color: #fbbf24;
+}
+footer {
+    padding: 1rem;
+    text-align: center;
+    background: #111827;
+    color: #777;
+    font-size: 0.9rem;
+    user-select: none;
+}
+@media (max-width: 900px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+    }
+    .chart-container,
+    .news-container {
+        max-width: 100%;
+        flex: unset;
+    }
+}
+
+
+
+
+
+
+
+.chart-container {
+    background: #1e293b;
+    border-radius: 12px;
+    padding: 1rem;
+    flex: 1 1 100%;
+    max-width: 50vw; /* 50% viewport width for Android */
+    box-shadow: 0 4px 14px rgba(251, 191, 36, 0.25);
+    display: flex;
+    flex-direction: column;
+    min-height: 2000px; /* Adjusted for two charts */
+    position: relative;
+}
+
+.chart-container canvas {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 200px; /* Limit height per chart on mobile */
+}
+
+/* Target Android devices (typical mobile widths) */
+@media (max-width: 768px) {
+    main {
+        padding: 1rem;
+        flex-direction: column;
+        align-items: center;
+    }
+    .chart-container {
+        max-width: 50vw; /* 50% width on Android */
+        min-height: 350px; /* Adjusted for mobile */
+        padding: 0.75rem;
+    }
+    .chart-container canvas {
+        max-height: 150px; /* Smaller height for mobile */
+    }
+    .controls {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    #price,
+    #signal {
+        font-size: 1.2rem;
+        min-width: 150px;
+    }
+    .indicators {
+        flex-direction: column; /* Stack indicators on mobile */
+        gap: 0.5rem;
+    }
+}
+
+/* For very small screens (e.g., older Android phones) */
+@media (max-width: 480px) {
+    .chart-container {
+        max-width: 100%; /* Fallback to full width if 50vw is too small */
+        padding: 0.5rem;
+    }
+    .chart-container canvas {
+        max-height: 120px; /* Even smaller for tiny screens */
+    }
+    #price,
+    #signal {
+        font-size: 1rem;
+        min-width: 120px;
+    }
+    header h1 {
+        font-size: 1.5rem;
+    }
+}
